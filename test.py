@@ -1,8 +1,16 @@
-import math
+import torch
+torch.zeros(1).cuda()
 
 
-def degrees_to_radians(degrees:int):
-    return (degrees * math.pi)/180
+print(torch.cuda.is_available())
 
-result = degrees_to_radians(90)
-print(result)
+print(torch.cuda.device_count())
+
+
+print(torch.cuda.current_device())
+
+
+print(torch.cuda.device(0))
+
+
+print(torch.cuda.get_device_name(0))
