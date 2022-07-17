@@ -7,11 +7,10 @@ from torchvision import transforms
 
 
 def get_dataloaders_FashionMnist(batch_size, num_workers=0,
-                          validation_fraction=None,
-                          train_transforms=None,
-                          test_transforms=None,
-			  valid_tranforms=None):
-
+                                 validation_fraction=None,
+                                 train_transforms=None,
+                                 test_transforms=None,
+                                 valid_transforms=None):
     if train_transforms is None:
         train_transforms = transforms.ToTensor()
 
@@ -19,17 +18,17 @@ def get_dataloaders_FashionMnist(batch_size, num_workers=0,
         test_transforms = transforms.ToTensor()
 
     train_dataset = datasets.FashionMNIST(root='data',
-                                   train=True,
-                                   transform=train_transforms,
-                                   download=True)
+                                          train=True,
+                                          transform=train_transforms,
+                                          download=True)
 
     valid_dataset = datasets.FashionMNIST(root='data',
-                                   train=True,
-                                   transform=valid_tranforms)
+                                          train=True,
+                                          transform=valid_transforms)
 
     test_dataset = datasets.FashionMNIST(root='data',
-                                  train=False,
-                                  transform=test_transforms)
+                                         train=False,
+                                         transform=test_transforms)
 
     if validation_fraction is not None:
         num = int(validation_fraction * 60000)

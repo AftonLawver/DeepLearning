@@ -3,8 +3,8 @@ num class labels: 10
 learning rate: ????
 batch size: 128
 input size: 784
-hidden layer size: ????
-hidden layer size2: ????
+hidden layer size: 100
+hidden layer size2: 50
 num epochs: ????
 cuda device: 0
 num workers: 0
